@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title th:text="${mode} == 'edit' ? 'Edit Profile' : 'Create Profile'">Profile Form</title>
+        <link rel="stylesheet" th:href="@{/css/styles.css}">
+    </head>
+    <body>
+        <div class="container">
+            <h1 th:text="${mode} == 'edit' ? 'Edit Profile' : 'Create Profile'"></h1>
+
+            <form th:action="${mode} == 'edit' ? @{'/profiles/' + ${profile.id}} : @{/profiles}"
+                  method="post" th:object="${profile}">
+                <div class="form-row">
+                    <label class="label" for="name">Name:</label>
+                    <input id="name" class="input" th:field="*{name}" required>
+                </div>
+                <div class="form-row">
+                    <label class="label" for="email">Email:</label>
+                    <input id="email" class="input" th:field="*{email}" type="email" required>
+                </div>
+                <div class="actions">
+                    <button class="btn" type="submit">Save</button>
+                    <a class="btn" th:href="@{/profiles}">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

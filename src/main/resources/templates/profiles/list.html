@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Profiles</title>
+        <link rel="stylesheet" th:href="@{/css/styles.css}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Profiles</h1>
+
+            <p><a class="btn" th:href="@{/profiles/new}">Create New Profile</a></p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th><th>Name</th><th>Email</th><th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="p : ${profiles}">
+                        <td th:text="${p.id}"></td>
+                        <td th:text="${p.name}"></td>
+                        <td th:text="${p.email}"></td>
+                        <td>
+                            <a class="btn" th:href="@{'/profiles/' + ${p.id} + '/edit'}">Edit</a>
+                            <form class="inline" th:action="@{'/profiles/' + ${p.id} + '/delete'}" method="post">
+                                <button class="btn btn--danger" type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

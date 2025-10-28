@@ -1,0 +1,28 @@
+/* Basic layout */
+body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; color: #111; }
+.container { margin: 2rem; }
+h1 { margin: 0 0 1rem; }
+a { color: #0366d6; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Buttons & small helpers */
+.btn { padding: 0.35rem 0.6rem; border: 1px solid #ccc; background: #f7f7f7; border-radius: 4px; cursor: pointer; }
+.btn--danger { background: #fdecec; border-color: #f1b0b7; }
+.inline { display: inline; }
+
+/* Forms */
+form { max-width: 480px; }
+.form-row { margin: 0.6rem 0; }
+.label { display: inline-block; width: 90px; color: #555; }
+.input { width: 260px; padding: 0.35rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+.actions { margin-top: 0.6rem; }
+
+/* Tables */
+.table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+.table th, .table td { padding: 0.5rem; border-bottom: 1px solid #ccc; text-align: left; }
+.table th { background: #f5f5f5; }
+
+/* Error pages */
+.error-404 h1 { color: #a33; }
+.error-500 h1, .error-generic h1 { color: #d33; }
+.back-link { display: inline-block; margin-top: 1rem; }
