@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS profiles_db;
+DROP DATABASE IF EXISTS exceptional_profiles;
 CREATE DATABASE exceptional_profiles;
 USE exceptional_profiles;
 
