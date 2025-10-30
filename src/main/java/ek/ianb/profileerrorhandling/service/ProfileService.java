@@ -29,15 +29,15 @@ public class ProfileService {
         return p;
     }
 
-    public Profile create(Profile p) {
+    public Profile create(Profile profile) {
         try {
-            return repo.insert(p);
+            return repo.insert(profile);
         } catch (DataIntegrityViolationException e) {
             throw new DuplicateProfileException(
                     "A profile with this name or email already exists."
             );
-        } catch (DataAccessException e) {
-            throw new DatabaseOperationException("Failed to create profile", e);
+        } catch (DataAccessException dataAccessException) {
+            throw new DatabaseOperationException("Failed to create profile", dataAccessException);
         }
     }
 

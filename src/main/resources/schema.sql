@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS profiles_db;
+CREATE DATABASE exceptional_profiles;
+USE exceptional_profiles;
+
 DROP TABLE IF EXISTS profiles;
 
 CREATE TABLE IF NOT EXISTS profiles (
